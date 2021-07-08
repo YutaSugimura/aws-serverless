@@ -1,0 +1,17 @@
+myNextApplication:
+  component: "@sls-next/serverless-component@3.1.0"
+  inputs:
+    bucketRegion: ap-northeast-1
+    bucketName: serverless-nextjs-test1
+    runtime:
+      defaultLambda: "nodejs14.x"
+      apiLambda: "nodejs14.x"
+      imageLambda: "nodejs14.x"
+    memory:
+      defaultLambda: 1024
+      apiLambda: 512
+      imageLambda: 512
+    name:
+      defaultLambda: serverless-nextjs-lambda
+      apiLambda: api-serverless-nextjs-lambda
+      imageLambda: image-serverless-nextjs-lambda

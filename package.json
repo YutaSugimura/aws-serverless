@@ -1,0 +1,63 @@
+{
+  "name": "template",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "test": "jest",
+    "type-check": "tsc --pretty --noEmit",
+    "test-all": "yarn type-check && yarn test",
+    "lint": "eslint . && prettier --check .",
+    "lint:next": "next lint",
+    "format": "eslint --fix . && prettier --write .",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.2.6",
+    "next": "11.0.1",
+    "postcss": "^8.3.5",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "swr": "^0.5.6",
+    "tailwindcss": "^2.2.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.17",
+    "@storybook/addon-actions": "^6.3.2",
+    "@storybook/addon-essentials": "^6.3.2",
+    "@storybook/addon-links": "^6.3.2",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/addon-viewport": "^6.3.2",
+    "@storybook/react": "^6.3.2",
+    "@testing-library/react-hooks": "^7.0.1",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.0.0",
+    "@types/react": "^17.0.13",
+    "@types/react-test-renderer": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@typescript-eslint/parser": "^4.28.2",
+    "babel-jest": "^27.0.6",
+    "eslint": "^7.30.0",
+    "eslint-config-next": "^11.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
+    "lint-staged": "^11.0.0",
+    "msw": "^0.30.1",
+    "prettier": "^2.3.2",
+    "react-test-renderer": "^17.0.2",
+    "serverless": "^2.51.0",
+    "typescript": "^4.3.2"
+  },
+  "msw": {
+    "workerDirectory": "public"
+  }
+}
