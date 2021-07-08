@@ -1,7 +1,6 @@
 import type { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { Card } from '../components/molecules/card';
 
 type Props = {
   data: {
@@ -11,13 +10,13 @@ type Props = {
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  if(process.env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === 'production') {
     return {
       props: {
         data: {
           title: '',
           text: '',
-        }
+        },
       },
     };
   }
@@ -77,8 +76,6 @@ const Page: React.VFC<Props> = ({ data }) => {
           <p>title: {data.title}</p>
           <p>text: {data.text}</p>
         </div>
-
-        <Card />
       </main>
 
       <footer className={styles.footer}>
