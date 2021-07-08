@@ -14,7 +14,7 @@ myNextApplication:
     name:
       defaultLambda: ${env.LAMBDA_NAME}
       apiLambda: ${env.API_LAMBDA_NAME}
-      imageLambda: image-${env.IMAGE_LAMBDA_NAME}
+      imageLambda: ${env.IMAGE_LAMBDA_NAME}
     cloudfront:
       distributionId: ${env.DISTRIBUTION_ID}
     roleArn: ${env.ROLE_ARN}
