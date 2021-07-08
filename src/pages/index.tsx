@@ -76,6 +76,10 @@ const Page: React.VFC<Props> = ({ data }) => {
           <p>title: {data.title}</p>
           <p>text: {data.text}</p>
         </div>
+
+        <div>
+          <p>add text</p>
+        </div>
       </main>
 
       <footer className={styles.footer}>
