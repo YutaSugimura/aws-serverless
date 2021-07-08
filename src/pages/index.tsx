@@ -79,6 +79,7 @@ const Page: React.VFC<Props> = ({ data }) => {
 
         <div>
           <p>add text</p>
+          <p>text text text</p>
         </div>
       </main>
 
