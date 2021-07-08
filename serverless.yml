@@ -17,4 +17,4 @@ myNextApplication:
       imageLambda: image-${env.IMAGE_LAMBDA_NAME}
     cloudfront:
       distributionId: ${env.DISTRIBUTION_ID}
-    policy: ${env.POLICY}
+    roleArn: ${env.ROLE_ARN}

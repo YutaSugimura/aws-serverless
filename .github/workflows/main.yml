@@ -6,6 +6,14 @@ on:
     branches: [main]
   workflow_dispatch:
 
+env:
+  BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
+  DISTRIBUTION_ID: ${{ secrets.DISTRIBUTION_ID }}
+  LAMBDA_NAME: ${{ secrets.LAMBDA_NAME }}
+  API_LAMBDA_NAME: ${{ secrets.API_LAMBDA_NAME }}
+  IMAGE_LAMBDA_NAME: ${{ secrets.IMAGE_LAMBDA_NAME }}
+  ROLE_ARN: ${{ secrets.ROLE_ARN }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
