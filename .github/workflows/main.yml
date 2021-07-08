@@ -1,25 +1,44 @@
-name: CI
+name: production deploy
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          node-version: ${{ matrix.node-version }}
+
+      - name: cache node_modules
+        id: node_modules_cache_id
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+          key: node-v${{ matrix.node-version }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+
       - name: Install NPM dependencies
         run: npm install
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-1
+
       - name: Deploy Next.js app
         run: npx serverless
