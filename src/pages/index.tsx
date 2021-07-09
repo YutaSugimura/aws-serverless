@@ -71,16 +71,6 @@ const Page: React.VFC<Props> = ({ data }) => {
             <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
           </a>
         </div>
-
-        <div>
-          <p>title: {data.title}</p>
-          <p>text: {data.text}</p>
-        </div>
-
-        <div>
-          <p>add text</p>
-          <p>text text text</p>
-        </div>
       </main>
 
       <footer className={styles.footer}>
